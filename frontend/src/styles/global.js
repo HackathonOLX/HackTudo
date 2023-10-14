@@ -11,8 +11,25 @@ export default createGlobalStyle`
         font-size: 62.5%;
     }
 
+    .darkmode {
+        background-color: #1c1b22;
+        color: #D8D8D8;
+        border-color: white;
+    }
+
+    .darkmode-buttons {
+        color: #D8D8D8;
+        border-color: white;
+
+        &:hover {
+        background-color: #FF9D2F;
+        border: none;
+        }
+    }
+
     body {
         font-family: "Poppins";
+        transition: all .3s;
     }
 
     @keyframes position {

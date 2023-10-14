@@ -80,6 +80,11 @@ export const MenuItem = styled.li`
 
     font-size: 1.1rem;
     cursor: pointer;
+    transition: all .3s;
+
+    &:hover {
+        color: #6E0AD6;
+    }
 
 `;
 
@@ -129,17 +134,17 @@ export const TextMain = styled.p`
 export const ButtonMain = styled.button`
 
     margin-top: 1rem;
-    background-color: transparent;
+    background-color: #F28000;
     border: .01rem solid black;
     font-family: "Poppins";
+    color: white;
     padding: .5rem 2rem;
     border-radius: .5rem;
     cursor: pointer;
     transition: all .3s;
 
     &:hover {
-        background-color: #6E0AD6;
-        color: white;
+        background-color: #E37800;
     }
 
 `;
@@ -168,6 +173,7 @@ export const DivHelpChatBot = styled.div`
     gap: .5rem;
     padding: .4rem 1.6rem;
     cursor: pointer;
+    transition: all .3s;
 
 `;
 
