@@ -27,6 +27,10 @@ export default createGlobalStyle`
         }
     }
 
+    .darkmode-cards {
+        border-color: white;
+    }
+
     body {
         font-family: "Poppins";
         transition: all .3s;

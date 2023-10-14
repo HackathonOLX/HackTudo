@@ -188,3 +188,90 @@ export const HelpImage = styled.img`
     width: 1.2rem;
 
 `;
+
+export const DivUx = styled.div`
+   
+   margin-top: 18rem;
+   padding: 2.5rem 10rem 5rem;
+
+`;
+
+export const TopContentUx = styled.div`
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+`;
+
+export const TextContentUx = styled.div`
+
+
+
+`;
+
+export const ImagesContentUx = styled.div`
+
+    display: flex;
+    gap: 2rem;
+
+`;
+
+export const TitleUxDesign = styled.h2`
+
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    color: #F28000;
+
+`;
+
+export const TextUx = styled.p`
+
+    width: 22.6rem;
+    text-align: justify;
+
+`;
+
+export const ImageUx1 = styled.img`
+
+    width: 20rem;
+    border-radius: 1rem;
+
+`;
+
+export const BottomContentUx = styled.div`
+
+    margin-top: 5rem;
+
+`;
+
+export const CardsUx = styled.div`
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+
+`;
+
+export const TextCard = styled.p`
+
+    width: 100%;
+    text-align: center;
+    border: .01rem solid black;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: translateY(-1rem);
+        box-shadow: #6E0AD6 5px 5px, #7918DE 10px 10px, #882CE8 15px 15px, #953CF1 20px 20px, #A752FF 25px 25px;    
+    }
+
+`;
+
+export const SpanCard = styled.span`
+
+    color: #6E0AD6;
+
+`;
