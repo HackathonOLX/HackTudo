@@ -66,6 +66,13 @@ export const ImgSetaDireita = styled.img`
 
 `;
 
+export const Link = styled.a`
+
+    text-decoration: none;
+    color: black;
+
+`;
+
 export const Header = styled.header`
     
     padding: 2.5rem 3.5rem 1.5rem;

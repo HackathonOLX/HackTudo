@@ -4,7 +4,7 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivHelpChatBot, HelpText, HelpImage, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -93,13 +93,13 @@ export function App() {
       <HelpImage src={SetaCima}></HelpImage>
     </DivHelpChatBot>
       <Header className='header'>
-        <ImgLogo src={Logo}></ImgLogo>
+        <Link href='https://www.olx.com.br/' target='_blank'><ImgLogo src={Logo}></ImgLogo></Link>
         <Nav>
           <Menu>
-            <MenuItem>Home</MenuItem>
-            <MenuItem>UX Design</MenuItem>
-            <MenuItem>Acessibilidade</MenuItem>
-            <MenuItem>ChatBot</MenuItem>
+            <Link href='#home'><MenuItem>Home</MenuItem></Link>
+            <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
+            <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
+            <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
             <MenuItem>     
               <label className="toggle-container">
                 <input type="checkbox" />
@@ -109,7 +109,7 @@ export function App() {
           </Menu>
         </Nav>
       </Header>
-      <Main>
+      <Main id='home'>
         <LeftScreenMain>
           <Title>HackTudo</Title>
           <SubTitle>Inovações Tecnológicas</SubTitle>
@@ -121,7 +121,7 @@ export function App() {
           <ImageMain src={Hackathon}></ImageMain>
         </RightScreenMain>
       </Main>
-      <DivUx>
+      <DivUx id='ux-design'>
         <TopContentUx>
           <TextContentUx>
             <TitleUxDesign>UX DESIGN</TitleUxDesign>
@@ -145,7 +145,7 @@ export function App() {
           </CardsUx>
         </BottomContentUx>
       </DivUx>
-      <DivAccessibility>
+      <DivAccessibility id='accessibility'>
         <TopContentAccessibility>
           <VideoContentAccessibility>
             <ImgAccessibility src={ImgAcessibilidade}></ImgAccessibility>
@@ -176,7 +176,7 @@ export function App() {
           </TipCard>
         </BottomContentAccessibility>
       </DivAccessibility>
-      <DivChatBot>
+      <DivChatBot id='chatbot'>
         <LeftContentChatBot>
           <TextContentChatBot>
             <TitleChatBot>CHATBOT</TitleChatBot>

@@ -19,6 +19,10 @@ export default createGlobalStyle`
         background-color: #1c1b22;
         color: #D8D8D8;
         border-color: white;
+
+        a {
+            color: #D8D8D8;
+        }
     }
 
     .darkmode-buttons {
