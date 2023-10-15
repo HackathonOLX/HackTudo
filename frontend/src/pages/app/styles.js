@@ -11,8 +11,8 @@ export const Container = styled.div`
       display: none;
     }
 
-    .toggle-slider {
-      width: 42px;
+    .toggle-slider, .toggle-slider-mobile {
+      width: 45px;
       height: 22px;
       background-color: #ccc;
       border-radius: 20px;
@@ -21,23 +21,27 @@ export const Container = styled.div`
       transition: background-color 0.3s;
     }
 
-    .toggle-slider:before {
-      content: "";
-      width: 18px;
-      height: 18px;
-      background-color: white;
-      border-radius: 50%;
-      position: absolute;
-      left: 2px;
-      top: 2px;
-      transition: transform 0.3s;
+    .toggle-slider:before, .toggle-slider-mobile:before {
+        content: "";
+        width: 18px;
+        height: 18px;
+        background-image: url('./lua.png');
+        background-size: cover;
+        background-repeat: no-repeat;      
+        border-radius: 50%;
+        position: absolute;
+        left: 4px;
+        top: 2px;
+        transition: transform 0.3s;
     }
 
-    .toggle-container input[type="checkbox"]:checked + .toggle-slider {
-      background-color: #525252; 
+    .toggle-container input[type="checkbox"]:checked + .toggle-slider,
+    .toggle-container input[type="checkbox"]:checked + .toggle-slider-mobile {
+      background-color: #525252;
     }
 
-    .toggle-container input[type="checkbox"]:checked + .toggle-slider:before {
+    .toggle-container input[type="checkbox"]:checked + .toggle-slider:before,
+    .toggle-container input[type="checkbox"]:checked + .toggle-slider-mobile:before {
       transform: translateX(20px);
     }
 
@@ -137,6 +141,45 @@ export const Menu = styled.ul`
 
 `;
 
+export const TopMenuMobile = styled.div`
+
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding: 0 2rem;
+
+`;
+
+export const BtnCloseMenu = styled.img`
+
+    width: 1rem;
+    cursor: pointer;
+
+`;
+
+export const MenuMobile = styled.div`
+
+    display: none;
+    width: 100%;
+    position: fixed;
+    text-align: center;
+    background-color: white;
+    z-index: 5;
+    transition: all .3s;
+
+    @media screen and (max-width: 800px) {
+
+
+    }
+
+`;
+
+export const UlMenuMobile = styled.ul`
+
+    list-style: none;
+
+`;
+
 export const MenuItem = styled.li`
 
     font-size: 1.1rem;
@@ -146,6 +189,34 @@ export const MenuItem = styled.li`
     &:hover {
         color: #6E0AD6;
     }
+
+    @media screen and (max-width: 800px) {
+
+        margin-top: .3rem;
+        font-size: 1rem;
+
+    }
+
+`;
+
+export const DivMenuMobile = styled.div`
+
+    display: none;
+
+    @media screen and (max-width: 800px) {
+
+        display: flex;
+        
+    }
+
+`;
+
+export const BtnMenuMobile = styled.img`
+
+    width: 2.5rem;
+    cursor: pointer;
+
+
 
 `;
 
@@ -827,4 +898,26 @@ export const TextAlert = styled.p`
 
     }
 
+`;
+
+export const Footer = styled.footer`
+
+    margin: 0 10rem;
+    text-align: center;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 0 1rem;
+
+    }
+
+`;
+
+export const TextFooter = styled.p`
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .8rem;
+
+    }   
 `;

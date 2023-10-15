@@ -15,6 +15,11 @@ export default createGlobalStyle`
         display: none;
     }
 
+    .onmobile {
+        display: block;
+        animation: topdownmobile linear .5s;
+    }
+
     .darkmode {
         background-color: #1c1b22;
         color: #D8D8D8;
@@ -132,4 +137,29 @@ export default createGlobalStyle`
         margin-right: 3.3rem;
     }
 }
+
+    @keyframes topdownmobile {
+    0% {
+        opacity: 1;
+        transform: translateY(-150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+    @keyframes downtopmobile {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(-150px);
+    }
+}
+
 `;

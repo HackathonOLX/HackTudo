@@ -4,7 +4,7 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, BtnCloseMenu, UlMenuMobile, Footer, TextFooter} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -19,6 +19,8 @@ import Lua from '../../images/lua.png'
 import Robo from '../../images/robo.jpg'
 import Alerta from '../../images/alerta.png'
 import RoboIcon from '../../images/roboicon.png'
+import BtnMenu from '../../images/menu.png'
+import X from '../../images/x.png'
 
 export function App() {
   const [mounted,setMounted] = useState(false)
@@ -30,6 +32,7 @@ export function App() {
           const body = document.body;
           const header = document.querySelector(".header");
           const check = document.querySelector(".toggle-slider");
+          const checkMobile = document.querySelector(".toggle-slider-mobile");
           const btnInit = document.querySelector(".bnt-init");
           const card1 = document.querySelector(".card1");
           const card2 = document.querySelector(".card2");
@@ -42,6 +45,10 @@ export function App() {
           const curiosity2 = document.querySelector(".curiosity2");
           const setaCima = document.querySelector(".seta-cima");
           const setaDireita = document.querySelector(".seta-direita");
+          const btnMenuMobile = document.querySelector(".btn-menu-mobile");
+          const MenuMobile = document.querySelector(".menu-mobile");
+          const BtnCloseMenuMobile = document.querySelector(".btn-close-menu");
+
 
           check.onclick = () => {
             body.classList.toggle("darkmode");
@@ -59,6 +66,23 @@ export function App() {
 
           }
 
+          checkMobile.onclick = () => {
+            body.classList.toggle("darkmode");
+            header.classList.toggle("darkmode");
+            card1.classList.toggle("darkmode-cards");
+            card2.classList.toggle("darkmode-cards");
+            card3.classList.toggle("darkmode-cards");
+            tip1.classList.toggle("darkmode-cards");
+            tip2.classList.toggle("darkmode-cards");
+            tip3.classList.toggle("darkmode-cards");
+            alert.classList.toggle("darkmode-cards");
+            curiosity1.classList.toggle("darkmode-cards");
+            curiosity2.classList.toggle("darkmode-cards");
+            MenuMobile.classList.toggle("darkmode");
+
+
+          }
+
           tip2.onclick = () => {
             setaCima.classList.remove("hide")
             setTimeout(function() {
@@ -72,6 +96,14 @@ export function App() {
               setaDireita.classList.add("hide");
             }, 2000);
           }
+
+          btnMenuMobile.addEventListener("click", function() {
+              MenuMobile.classList.add("onmobile");
+          })
+
+          BtnCloseMenuMobile.addEventListener("click", function() {
+            MenuMobile.classList.remove("onmobile");
+          })
             
         }
 
@@ -102,6 +134,26 @@ export function App() {
             </MenuItem>
           </Menu>
         </Nav>
+        <MenuMobile className='menu-mobile'>
+          <TopMenuMobile>
+            <BtnCloseMenu src={X} className='btn-close-menu'></BtnCloseMenu>
+          </TopMenuMobile>
+          <UlMenuMobile>
+            <Link href='#home'><MenuItem>Home</MenuItem></Link>
+            <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
+            <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
+            <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
+            <MenuItem tabIndex={0}>     
+              <label className="toggle-container">
+              <input type="checkbox" />
+              <div className="toggle-slider-mobile"></div>
+              </label>
+            </MenuItem>
+          </UlMenuMobile>
+        </MenuMobile>
+        <DivMenuMobile>
+          <BtnMenuMobile src={BtnMenu} className='btn-menu-mobile'></BtnMenuMobile>
+        </DivMenuMobile>
       </Header>
       <Main id='home'>
         <LeftScreenMain>
@@ -109,7 +161,7 @@ export function App() {
           <SubTitle>Inovações Tecnológicas</SubTitle>
           <TextMain>Este projeto é uma celebração da criatividade, colaboração e resolução de problemas, onde convidamos 
             você a embarcar em uma jornada que desafia os limites da inovação.</TextMain>
-          <ButtonMain className='bnt-init'>Vamos Começar</ButtonMain>
+          <Link href='#ux-design'><ButtonMain className='bnt-init'>Vamos Começar</ButtonMain></Link>
         </LeftScreenMain>
         <RightScreenMain>
           <ImageMain src={Hackathon} alt='Imagem tecnológica do Hackathon OLX'></ImageMain>
@@ -198,6 +250,11 @@ export function App() {
           </TipCard>
         </RightContentChatBot>
       </DivChatBot>
+      <Footer>
+        <hr></hr>
+        <TextFooter>© 2023 - Todos os direitos reservados</TextFooter>
+        <TextFooter>Desenvolvido por ideias.java</TextFooter>
+      </Footer>
     </Container>
   )
 }
