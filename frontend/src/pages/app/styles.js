@@ -394,12 +394,15 @@ export const TextTip = styled.p`
 
 export const DivChatBot = styled.div`
 
+    width: 100%;
     margin-top: 5rem;
     padding: 2.5rem 10rem 5rem;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 
-export const TopContentChatBot = styled.div`
+export const LeftContentChatBot = styled.div`
 
 
 
@@ -416,5 +419,94 @@ export const TitleChatBot = styled.h2`
     font-size: 4rem;
     letter-spacing: .2rem;
     color: #F28000;
+
+`;
+
+export const TextChatBot = styled.p`
+
+    width: 35rem;
+    text-align: justify;
+
+`;
+
+export const RightContentChatBot = styled.div`
+
+    width: 30rem;
+
+    .tip3 {
+        margin-top: 2rem;
+        width: 30rem;
+        justify-content: start;
+        gap: .5rem;
+
+        p {
+            width: 100%;
+        }
+    }
+
+`;
+
+export const ImgChatBot = styled.img`
+
+    width: 23.2rem;
+    border-radius: 1rem;
+
+`;
+
+export const Curiosity = styled.p`
+
+    margin-top: 2rem;
+    width: 35rem;
+    text-align: center;
+    border: .01rem solid black;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: translateX(1rem);
+        box-shadow: #6E0AD6 5px 5px, #7918DE 10px 10px, #882CE8 15px 15px, #953CF1 20px 20px, #A752FF 25px 25px;    
+    }
+
+`;
+
+export const Alert = styled.div`
+
+    margin-top: 1.2rem;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    gap: 1rem;
+    border: .01rem solid black;
+    border-radius: 1rem;
+
+`;
+
+export const ImgAlert = styled.img`
+
+    width: 4rem;
+    border: .01rem solid black;
+    border-radius: 50%;
+    padding: .2rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+
+`;
+
+export const ContentAlert = styled.div`
+
+
+
+`;
+
+export const TextAlert = styled.p`
+
+    font-size: .9rem;
+    text-align: justify;
 
 `;

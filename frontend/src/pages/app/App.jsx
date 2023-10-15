@@ -4,11 +4,7 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivHelpChatBot, HelpText, HelpImage, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, 
-DivChatBot,
-TopContentChatBot,
-TextContentChatBot,
-TitleChatBot} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -19,6 +15,9 @@ import UX2 from '../../images/imgux2.jpg'
 import ImgAcessibilidade from '../../images/acessibilidade.jpg'
 import Libras from '../../images/libras.png'
 import Lua from '../../images/lua.png'
+import Robo from '../../images/robo.jpg'
+import Alerta from '../../images/alerta.png'
+import RoboIcon from '../../images/roboicon.png'
 
 export function App() {
   const [mounted,setMounted] = useState(false)
@@ -37,6 +36,10 @@ export function App() {
           const card3 = document.querySelector(".card3");
           const tip1 = document.querySelector(".tip1");
           const tip2 = document.querySelector(".tip2");
+          const tip3 = document.querySelector(".tip3");
+          const alert = document.querySelector(".alert");
+          const curiosity1 = document.querySelector(".curiosity1");
+          const curiosity2 = document.querySelector(".curiosity2");
           const setaCima = document.querySelector(".seta-cima");
 
           check.onclick = () => {
@@ -48,6 +51,11 @@ export function App() {
             card3.classList.toggle("darkmode-cards");
             tip1.classList.toggle("darkmode-cards");
             tip2.classList.toggle("darkmode-cards");
+            tip3.classList.toggle("darkmode-cards");
+            alert.classList.toggle("darkmode-cards");
+            curiosity1.classList.toggle("darkmode-cards");
+            curiosity2.classList.toggle("darkmode-cards");
+
 
           }
 
@@ -159,11 +167,42 @@ export function App() {
         </BottomContentAccessibility>
       </DivAccessibility>
       <DivChatBot>
-        <TopContentChatBot>
+        <LeftContentChatBot>
           <TextContentChatBot>
             <TitleChatBot>CHATBOT</TitleChatBot>
+            <TextChatBot>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo consequatur minima eveniet dicta ipsa minus 
+              repellat adipisci repellendus quia officia. Voluptatibus illo quas eum maiores sunt sit non voluptate temporibus.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quia debitis consectetur itaque vero vel earum, 
+              doloribus eos assumenda facilis suscipit. Reprehenderit illum a nisi dolore dolorem quisquam quaerat similique.</TextChatBot>
+            <Curiosity className='curiosity1'>
+              <SpanCard>Curiosidade:</SpanCard> Assistentes virtuais de voz, como Siri da Apple, Amazon Alexa e Google Assistant, usam tecnologias de IA para 
+              reconhecimento de fala e processamento de linguagem natural para interagir com os usuários.
+            </Curiosity>
+            <Curiosity className='curiosity2'>
+            <SpanCard>Curiosidade:</SpanCard> Muitas empresas agora usam chatbots para fornecer suporte ao cliente e responder a perguntas comuns. Isso 
+            ajuda a melhorar a eficiência e a disponibilidade do atendimento ao cliente.
+            </Curiosity>
           </TextContentChatBot>
-        </TopContentChatBot>
+        </LeftContentChatBot>
+        <RightContentChatBot>
+          <ImgChatBot src={Robo}></ImgChatBot>
+          <Alert className='alert'>
+            <ImgAlert src={Alerta}></ImgAlert>
+            <ContentAlert>
+              <TitleTip>ALERTA:</TitleTip>
+              <TextAlert>A inteligência artificial não está aqui para te prejudicar, muito pelo contrário. A tecnologia segue evoluindo com o decorrer dos
+                anos, e a inteligência artificial é mais um desses avanços da tecnologia.
+              </TextAlert>
+            </ContentAlert>
+          </Alert>
+          <TipCard className='tip3'>
+            <ImgTipCard src={RoboIcon}></ImgTipCard>
+            <TipContent>
+              <TitleTip>Dica:</TitleTip>
+              <TextTip>Para acessar o ChatBot, basta clicar no ícone de "robô" no canto inferior direito dessa página e realizar o que você precisa!</TextTip>
+            </TipContent>
+          </TipCard>
+        </RightContentChatBot>
       </DivChatBot>
     </Container>
   )
