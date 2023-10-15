@@ -4,7 +4,7 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -31,7 +31,6 @@ export function App() {
           const header = document.querySelector(".header");
           const check = document.querySelector(".toggle-slider");
           const btnInit = document.querySelector(".bnt-init");
-          const divHelpChatBox = document.querySelector(".help-chat-box");
           const card1 = document.querySelector(".card1");
           const card2 = document.querySelector(".card2");
           const card3 = document.querySelector(".card3");
@@ -47,7 +46,6 @@ export function App() {
           check.onclick = () => {
             body.classList.toggle("darkmode");
             header.classList.toggle("darkmode");
-            divHelpChatBox.classList.toggle("darkmode-buttons");
             card1.classList.toggle("darkmode-cards");
             card2.classList.toggle("darkmode-cards");
             card3.classList.toggle("darkmode-cards");
@@ -161,7 +159,8 @@ export function App() {
             <ImgTipCard src={Lua} alt='Ícone de lua'></ImgTipCard>
             <TipContent>
               <TitleTip>Dica:</TitleTip>
-              <TextTip>Para alterar a página para o tema escuro, basta clicar no botão ao lado do menu no canto superior direito!<br/><span style={{color: '#6E0AD6', fontWeight:'bold'}}>Obs: Clique na imagem ao lado.</span></TextTip>
+              <TextTipNoMobile>Para alterar a página para o tema escuro, basta clicar no botão ao lado do menu no canto superior direito!<br/><span style={{color: '#6E0AD6', fontWeight:'bold'}}>Obs: Clique na imagem ao lado.</span></TextTipNoMobile>
+              <TextTipMobile>Para alterar a página para o tema escuro, basta clicar no botão de menu no canto superior direito, e clicar no último botão do menu! </TextTipMobile>
             </TipContent>
           </TipCard>
         </BottomContentAccessibility>

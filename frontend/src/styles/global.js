@@ -42,6 +42,7 @@ export default createGlobalStyle`
     body {
         font-family: "Poppins";
         transition: all .3s;
+        overflow-x: hidden;
     }
 
     @keyframes position {
@@ -63,6 +64,28 @@ export default createGlobalStyle`
 
     100% {
         margin-top: -11rem;
+    }
+}
+
+    @keyframes positionMobile {
+    0% {
+        margin-top: 1.5rem;
+    }
+
+    25% {
+        margin-top: 3rem;
+    }
+
+    50% {
+        margin-top: 4.5rem;
+    }
+
+    75% {
+        margin-top: 3rem;
+    }
+
+    100% {
+        margin-top: 1.5rem;
     }
 }
 

@@ -52,6 +52,12 @@ export const ImgSetaCima = styled.img`
     margin-right: 3.3rem;
     animation: positionSetaCima .7s linear infinite;
 
+    @media screen and (max-width: 800px) {
+
+        display: none;
+
+    }
+
 `;
 
 export const ImgSetaDireita = styled.img`
@@ -63,6 +69,13 @@ export const ImgSetaDireita = styled.img`
     margin-top: 20.5rem;
     margin-right: 3.3rem;
     animation: positionSetaDireita .7s linear infinite;
+
+    @media screen and (max-width: 800px) {
+
+        width: 1rem;
+        margin-top: 21.3rem;
+
+    }
 
 `;
 
@@ -84,6 +97,12 @@ export const Header = styled.header`
     z-index: 1;
     transition: all .3s;
 
+    @media screen and (max-width: 800px) {
+
+        padding: 1.5rem 1rem;
+
+    }
+
 `;
 
 export const ImgLogo = styled.img`
@@ -91,10 +110,21 @@ export const ImgLogo = styled.img`
     width: 5.5rem;
     cursor: pointer;
 
+    @media screen and (max-width: 800px) {
+
+        width: 4rem;
+
+    }
+
 `;
 
 export const Nav = styled.nav`
 
+    @media screen and (max-width: 800px) {
+
+        display: none;
+
+    }
 
 `;
 
@@ -125,9 +155,23 @@ export const Main = styled.main`
     justify-content: center;
     align-items: center;
     gap: 5rem;
+
+    @media screen and (max-width: 800px) {
+
+        padding-top: 10rem;
+        display: block;
+
+    }
+
 `;
 
 export const LeftScreenMain = styled.div`
+
+    @media screen and (max-width: 800px) {
+
+        text-align: center;
+
+    }
 
 `;
 
@@ -135,6 +179,12 @@ export const RightScreenMain = styled.div`
 
     width: 20rem;
     position: relative;
+
+    @media screen and (max-width: 800px) {
+
+        width: 100%;
+
+    }
 
 `;
 
@@ -144,6 +194,13 @@ export const Title = styled.h2`
     color: #6E0AD6;
     font-size: 4rem;
 
+    @media screen and (max-width: 800px) {
+
+        font-size: 3rem;
+        text-align: center;
+
+    }
+
 `;
 
 export const SubTitle = styled.h4`
@@ -152,12 +209,28 @@ export const SubTitle = styled.h4`
     color: #F28000;
     font-size: 1.7rem;
 
+    @media screen and (max-width: 800px) {
+
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+
 `;
 
 export const TextMain = styled.p`
 
     width: 25rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        font-size: 1rem;
+        width: 93%;
+        text-align: center;
+
+    }
 
 `;
 
@@ -177,6 +250,11 @@ export const ButtonMain = styled.button`
         background-color: #E37800;
     }
 
+    @media screen and (max-width: 800px) {
+
+
+    }
+
 `;
 
 
@@ -187,6 +265,18 @@ export const ImageMain = styled.img`
     position: absolute;
     width: 23rem;
     animation: position 3s linear infinite;
+
+    @media screen and (max-width: 800px) {
+
+        width: 15rem;
+        margin-top: 1.5rem;
+        text-align: center;
+        top: 50%;
+        left: 25%;
+        animation: positionMobile 3s linear infinite;
+
+    }
+
 `;
 
 export const DivUx = styled.div`
@@ -196,6 +286,7 @@ export const DivUx = styled.div`
 
    @media screen and (max-width: 800px) {
 
+    margin-top: 23rem;
     padding: 2.5rem 1rem;
 
    }
@@ -321,6 +412,10 @@ export const TextCard = styled.p`
 
         font-size: .8rem;
         margin-bottom: 1rem;
+
+        &:hover {
+            box-shadow: #6E0AD6 2px 2px, #7918DE 7px 7px, #882CE8 10px 10px, #953CF1 10px 10px, #A752FF 10px 10px; 
+        }
 
     }
 
@@ -502,6 +597,37 @@ export const TextTip = styled.p`
 
 `;
 
+export const TextTipNoMobile = styled.p`
+
+    width: 18rem;
+    font-size: .9rem;
+    text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .7rem;
+        display: none;
+    
+    }
+
+`;
+
+export const TextTipMobile = styled.div`
+
+    width: 18rem;
+    font-size: .9rem;
+    text-align: justify;
+    display: none;
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .7rem;
+        display: block;
+
+    }
+
+`;
+
 export const DivChatBot = styled.div`
 
     width: 100%;
@@ -510,6 +636,13 @@ export const DivChatBot = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 800px) {
+
+        display: block;
+        padding: 2.5rem 1rem;
+
+    }
 `;
 
 export const LeftContentChatBot = styled.div`
@@ -520,7 +653,11 @@ export const LeftContentChatBot = styled.div`
 
 export const TextContentChatBot = styled.div`
 
+    @media screen and (max-width: 800px) {
+    
+        text-align: center;
 
+    }
 
 `;
 
@@ -530,12 +667,27 @@ export const TitleChatBot = styled.h2`
     letter-spacing: .2rem;
     color: #F28000;
 
+    @media screen and (max-width: 800px) {
+
+        font-size: 2rem;
+        letter-spacing: .1rem;
+
+    }
+
 `;
 
 export const TextChatBot = styled.p`
 
     width: 35rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        width: 20rem;
+        font-size: .9rem;
+
+    }
 
 `;
 
@@ -554,12 +706,36 @@ export const RightContentChatBot = styled.div`
         }
     }
 
+    @media screen and (max-width: 800px) {
+
+        margin-top: 2rem;
+        text-align: center;
+
+        .tip3 {
+            margin-top: 1rem;
+            gap: .5rem;
+            width: 25rem;
+
+            P {
+                font-size: .8rem;
+            }
+
+        }
+
+    }
+
 `;
 
 export const ImgChatBot = styled.img`
 
     width: 23.2rem;
     border-radius: 1rem;
+
+    @media screen and (max-width: 800px) {
+
+        width: 15rem;
+    
+    }
 
 `;
 
@@ -578,6 +754,17 @@ export const Curiosity = styled.p`
         box-shadow: #6E0AD6 5px 5px, #7918DE 10px 10px, #882CE8 15px 15px, #953CF1 20px 20px, #A752FF 25px 25px;    
     }
 
+    @media screen and (max-width: 800px) {
+
+        width: 100%;
+        font-size: .9rem;
+
+        &:hover {
+            box-shadow: #6E0AD6 2px 2px, #7918DE 7px 7px, #882CE8 10px 10px, #953CF1 10px 10px, #A752FF 10px 10px; 
+        }
+
+    }
+
 `;
 
 export const Alert = styled.div`
@@ -591,6 +778,15 @@ export const Alert = styled.div`
     gap: 1rem;
     border: .01rem solid black;
     border-radius: 1rem;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 1rem auto 0;
+        width: 25rem;
+        text-align: center;
+        gap: .5rem;
+
+    }
 
 `;
 
@@ -606,6 +802,12 @@ export const ImgAlert = styled.img`
         transform: rotate(360deg);
     }
 
+    @media screen and (max-width: 800px) {
+
+        width: 2rem;
+
+    }
+
 `;
 
 export const ContentAlert = styled.div`
@@ -618,5 +820,11 @@ export const TextAlert = styled.p`
 
     font-size: .9rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .8rem;
+
+    }
 
 `;
