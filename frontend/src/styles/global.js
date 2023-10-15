@@ -83,4 +83,26 @@ export default createGlobalStyle`
         margin-top: 5rem;
     }
 }
+
+    @keyframes positionSetaDireita {
+    0% {
+        margin-right: 3.3rem;
+    }
+
+    25% {
+        margin-right: 4.3rem;
+    }
+
+    50% {
+        margin-right: 5.3rem;
+    }
+
+    75% {
+        margin-right: 4.3rem;
+    }
+
+    100% {
+        margin-right: 3.3rem;
+    }
+}
 `;

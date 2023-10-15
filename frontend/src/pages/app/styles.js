@@ -54,6 +54,18 @@ export const ImgSetaCima = styled.img`
 
 `;
 
+export const ImgSetaDireita = styled.img`
+
+    width: 3rem;
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    margin-top: 20.5rem;
+    margin-right: 3.3rem;
+    animation: positionSetaDireita .7s linear infinite;
+
+`;
+
 export const Header = styled.header`
     
     padding: 2.5rem 3.5rem 1.5rem;

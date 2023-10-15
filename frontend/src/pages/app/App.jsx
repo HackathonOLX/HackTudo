@@ -4,10 +4,11 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivHelpChatBot, HelpText, HelpImage, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
+import SetaDireitaGif from '../../images/setadireita.png'
 import Hackathon from '../../images/hackathon.png'
 import SetaCima from '../../images/seta.png'
 import UX1 from '../../images/imgux1.jpg'
@@ -41,6 +42,7 @@ export function App() {
           const curiosity1 = document.querySelector(".curiosity1");
           const curiosity2 = document.querySelector(".curiosity2");
           const setaCima = document.querySelector(".seta-cima");
+          const setaDireita = document.querySelector(".seta-direita");
 
           check.onclick = () => {
             body.classList.toggle("darkmode");
@@ -65,6 +67,13 @@ export function App() {
               setaCima.classList.add("hide");
             }, 2000);
           }
+
+          tip1.onclick = () => {
+            setaDireita.classList.remove("hide");
+            setTimeout(function() {
+              setaDireita.classList.add("hide");
+            }, 2000);
+          }
             
         }
 
@@ -78,6 +87,7 @@ export function App() {
   return (
     <Container>
     <ImgSetaCima src={SetaCimaGif} className='seta-cima hide'></ImgSetaCima>
+    <ImgSetaDireita src={SetaDireitaGif} className='seta-direita hide'></ImgSetaDireita>
     <DivHelpChatBot className='help-chat-box'>
       <HelpText>Precisa de Ajuda?</HelpText>
       <HelpImage src={SetaCima}></HelpImage>
