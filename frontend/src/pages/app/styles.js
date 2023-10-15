@@ -247,7 +247,7 @@ export const TitleUxDesign = styled.h2`
 
 export const TextUx = styled.p`
 
-    width: 22.6rem;
+    width: 28.6rem;
     text-align: justify;
 
     @media screen and (max-width: 800px) {

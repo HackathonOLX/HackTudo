@@ -86,17 +86,17 @@ export function App() {
 
   return (
     <Container>
-    <ImgSetaCima src={SetaCimaGif} className='seta-cima hide'></ImgSetaCima>
-    <ImgSetaDireita src={SetaDireitaGif} className='seta-direita hide'></ImgSetaDireita>
+    <ImgSetaCima src={SetaCimaGif} alt='Seta para cima' className='seta-cima hide'></ImgSetaCima>
+    <ImgSetaDireita src={SetaDireitaGif} alt='Seta para baixo' className='seta-direita hide'></ImgSetaDireita>
       <Header className='header'>
-        <Link href='https://www.olx.com.br/' target='_blank'><ImgLogo src={Logo}></ImgLogo></Link>
+        <Link href='#'><ImgLogo src={Logo}></ImgLogo></Link>
         <Nav>
           <Menu>
             <Link href='#home'><MenuItem>Home</MenuItem></Link>
             <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
             <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
             <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
-            <MenuItem>     
+            <MenuItem tabIndex={0}>     
               <label className="toggle-container">
                 <input type="checkbox" />
                 <div className="toggle-slider"></div>
@@ -114,20 +114,18 @@ export function App() {
           <ButtonMain className='bnt-init'>Vamos Começar</ButtonMain>
         </LeftScreenMain>
         <RightScreenMain>
-          <ImageMain src={Hackathon}></ImageMain>
+          <ImageMain src={Hackathon} alt='Imagem tecnológica do Hackathon OLX'></ImageMain>
         </RightScreenMain>
       </Main>
       <DivUx id='ux-design'>
         <TopContentUx>
           <TextContentUx>
-            <TitleUxDesign>UX DESIGN</TitleUxDesign>
-            <TextUx>O UX é muito importante porque trabalha para que os clientes se sintam bem sempre. As consequências disso é que dessa forma naturalmente os 
-              clientes permanecem mais tempo com os serviços, são mais receptivos a upgrades e novas compras, propagam a marca para conhecidos e colaboram 
-              para a melhora dos produtos e serviços.</TextUx>
+            <TitleUxDesign lang='en-us'>UX DESIGN</TitleUxDesign>
+            <TextUx>O UX é extremamente importante porque trabalha para que os clientes se sintam bem sempre. As consequências disso é que dessa forma, naturalmente, os clientes permanecem mais tempo com os serviços, são mais receptivos a upgrades e novas compras, propagam a marca para conhecidos e colaboram para a melhora dos produtos e serviços. Pensando em toda a experiência do cliente, o nosso time promoveu estratégias com base e foco no usuário da aplicação. Por isso, trabalhamos aspectos muito importantes de Acessibilidade e a Implementação de um Chatbot como alavanca para uma melhor experiência de todos os públicos. Esperamos que curtam o nosso desenvolvimento.</TextUx>
           </TextContentUx>
           <ImagesContentUx>
-            <ImageUx1 src={UX1}></ImageUx1>
-            <ImageUx1 src={UX2}></ImageUx1>
+            <ImageUx1 src={UX1} alt='Imagem de uma mesa de escritório com um notebook, mouse, um teclado, um tablet e mais alguns objetos como grampeador e um porta-canetas.'></ImageUx1>
+            <ImageUx1 src={UX2} alt='Imagem da mesa de escritório da imagem anterior mas com uma pessoa utilizando o tablet.'></ImageUx1>
           </ImagesContentUx>
         </TopContentUx>
         <BottomContentUx>
@@ -144,30 +142,26 @@ export function App() {
       <DivAccessibility id='accessibility'>
         <TopContentAccessibility>
           <VideoContentAccessibility>
-            <ImgAccessibility src={ImgAcessibilidade}></ImgAccessibility>
+            <ImgAccessibility src={ImgAcessibilidade} alt='Imagem de um muro com uma placa indicando ser uma passagem acessível para pessoas com necessidades especiais.'></ImgAccessibility>
           </VideoContentAccessibility>
           <TextContentAccessibility>
             <TitleAccessibility>ACESSIBILIDADE</TitleAccessibility>
-            <TextAccessibility>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ipsum iusto voluptates libero inventore sunt non corporis 
-              quaerat. Neque praesentium cupiditate saepe explicabo velit, ut ducimus dolorem dolore vel provident. Lorem ipsum dolor sit amet consectetur 
-              adipisicing elit. Unde porro corporis est corrupti, sed itaque, nisi quod atque harum ea magnam alias assumenda? Aspernatur similique 
-              deserunt iste quo magni minima. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe quidem quisquam laborum ratione voluptatibus 
-              excepturi qui similique fugit, hic debitis voluptatem asperiores assumenda amet aspernatur nesciunt repellendus velit reprehenderit culpa.</TextAccessibility>
+            <TextAccessibility>Sem dúvidas, é extremamente importante que a nossa aplicação na WEB seja o mais acessível possível, por isso, o nosso grupo se atentou para corresponder com os requisitos de acessibilidade voltados para Libras e textos alternativos em imagens para os leitores de tela, Responsividade e Adequação da cor da tela. A intenção é fazer com que todos os públicos se sintam confortáveis ao utilizar a plataforma, independente do dispositivo, de necessidades especiais e até de preferências. A ferramenta VLibras traduz automaticamente conteúdos digitais em diversos suportes, como textos, áudios e vídeos para a Língua Brasileira de Sinais (Libras) através de tradução automática e uso de um Avatar 3D, tornando a nossa aplicação acessível para pessoas surdas. A responsividade faz com que diversos dispositivos possam acessar o nosso conteúdo sem distorção das informações e funcionalidades. Já o botão de troca de tema, atende tanto pessoas que preferem um tema claro e brilhante, ideal para uso diurno, quanto as pessoas que amam um tema mais escuro e aconchegante, perfeito para uso noturno.</TextAccessibility>
           </TextContentAccessibility>
         </TopContentAccessibility>
         <BottomContentAccessibility>
-          <TipCard className='tip1'>
-            <ImgTipCard src={Libras}></ImgTipCard>
+          <TipCard className='tip1' tabIndex={0}>
+            <ImgTipCard src={Libras} alt='Ícone de uma mão indicando libras'></ImgTipCard>
             <TipContent>
               <TitleTip>Dica:</TitleTip>
-              <TextTip>Para acessar o vLibras, basta clicar no ícone de "libras" no canto direito dessa página e seguir as instruções!</TextTip>
+              <TextTip>Para acessar o vLibras, basta clicar no ícone de "libras" no canto direito dessa página e seguir as instruções!<br/><span style={{color: '#6E0AD6', fontWeight: 'bold'}}>Obs: Clique na imagem ao lado.</span></TextTip>
             </TipContent>
           </TipCard>
-          <TipCard className='tip2'>
-            <ImgTipCard src={Lua}></ImgTipCard>
+          <TipCard className='tip2' tabIndex={0}>
+            <ImgTipCard src={Lua} alt='Ícone de lua'></ImgTipCard>
             <TipContent>
               <TitleTip>Dica:</TitleTip>
-              <TextTip>Para alterar a página para o tema escuro, basta clicar no botão ao lado do menu no canto superior direito!</TextTip>
+              <TextTip>Para alterar a página para o tema escuro, basta clicar no botão ao lado do menu no canto superior direito!<br/><span style={{color: '#6E0AD6', fontWeight:'bold'}}>Obs: Clique na imagem ao lado.</span></TextTip>
             </TipContent>
           </TipCard>
         </BottomContentAccessibility>
@@ -176,24 +170,19 @@ export function App() {
         <LeftContentChatBot>
           <TextContentChatBot>
             <TitleChatBot>CHATBOT</TitleChatBot>
-            <TextChatBot>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo consequatur minima eveniet dicta ipsa minus 
-              repellat adipisci repellendus quia officia. Voluptatibus illo quas eum maiores sunt sit non voluptate temporibus.
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, quia debitis consectetur itaque vero vel earum, 
-              doloribus eos assumenda facilis suscipit. Reprehenderit illum a nisi dolore dolorem quisquam quaerat similique.</TextChatBot>
+            <TextChatBot>A implementação de um chatbot na plataforma da OLX forneceria maior suporte ao cliente e praticidade para responder a perguntas comuns. Isso ajuda a melhorar a eficiência e a disponibilidade do atendimento ao cliente, pois o chatbot tem como principais benefícios para a empresa: Redução de custos, Otimização do atendimento, Agilidade na solução de dúvidas frequentes, Satisfação dos clientes, Potencial de coleta de dados e Redução no tempo de espera. Um chatbot bem configurado pode trazer todos esses benefícios para a OLX, e utilizando técnicas de Big Data e Algoritmo ao nosso favor, a tendência é que a fidelização dos nossos clientes seja cada vez maior.</TextChatBot>
             <Curiosity className='curiosity1'>
-              <SpanCard>Curiosidade:</SpanCard> Assistentes virtuais de voz, como Siri da Apple, Amazon Alexa e Google Assistant, usam tecnologias de IA para 
-              reconhecimento de fala e processamento de linguagem natural para interagir com os usuários.
+              <SpanCard>Curiosidade:</SpanCard> A automatização de processos é um dos principais ganhos da aplicação de inteligência artificial em empresas. Tarefas repetitivas e burocráticas podem ser facilmente informatizadas e realizadas por sistemas inteligentes.
             </Curiosity>
             <Curiosity className='curiosity2'>
-            <SpanCard>Curiosidade:</SpanCard> Muitas empresas agora usam chatbots para fornecer suporte ao cliente e responder a perguntas comuns. Isso 
-            ajuda a melhorar a eficiência e a disponibilidade do atendimento ao cliente.
+            <SpanCard>Curiosidade:</SpanCard> Por meio da análise de dados, processamento veloz e preciso de informações, a inteligência artificial é usada para avaliação de indicadores de desempenho e geração de relatórios de performance. Esses recursos são essenciais para enxergar pontos de melhoria, e obter insights.
             </Curiosity>
           </TextContentChatBot>
         </LeftContentChatBot>
         <RightContentChatBot>
-          <ImgChatBot src={Robo}></ImgChatBot>
+          <ImgChatBot src={Robo} alt='Imagem do robô do filme Wall-e segurando e observando uma plantinha pequena.'></ImgChatBot>
           <Alert className='alert'>
-            <ImgAlert src={Alerta}></ImgAlert>
+            <ImgAlert src={Alerta} alt='Ícone de uma placa de alerta'></ImgAlert>
             <ContentAlert>
               <TitleTip>ALERTA:</TitleTip>
               <TextAlert>A inteligência artificial não está aqui para te prejudicar, muito pelo contrário. A tecnologia segue evoluindo com o decorrer dos
@@ -202,7 +191,7 @@ export function App() {
             </ContentAlert>
           </Alert>
           <TipCard className='tip3'>
-            <ImgTipCard src={RoboIcon}></ImgTipCard>
+            <ImgTipCard src={RoboIcon} alt='Ícone de um robô'></ImgTipCard>
             <TipContent>
               <TitleTip>Dica:</TitleTip>
               <TextTip>Para acessar o ChatBot, basta clicar no ícone de "robô" no canto inferior direito dessa página e realizar o que você precisa!</TextTip>
