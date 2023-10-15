@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react'
 
 import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, RightScreenMain, Title, SubTitle, TextMain, ButtonMain,
-ImageMain, DivHelpChatBot, HelpText, HelpImage, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
+ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
 ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link} from './styles'
@@ -88,10 +88,6 @@ export function App() {
     <Container>
     <ImgSetaCima src={SetaCimaGif} className='seta-cima hide'></ImgSetaCima>
     <ImgSetaDireita src={SetaDireitaGif} className='seta-direita hide'></ImgSetaDireita>
-    <DivHelpChatBot className='help-chat-box'>
-      <HelpText>Precisa de Ajuda?</HelpText>
-      <HelpImage src={SetaCima}></HelpImage>
-    </DivHelpChatBot>
       <Header className='header'>
         <Link href='https://www.olx.com.br/' target='_blank'><ImgLogo src={Logo}></ImgLogo></Link>
         <Nav>

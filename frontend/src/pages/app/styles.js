@@ -189,40 +189,16 @@ export const ImageMain = styled.img`
     animation: position 3s linear infinite;
 `;
 
-export const DivHelpChatBot = styled.div`
-
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    margin-right: 3.5rem;
-    border: .01rem solid black;
-    border-bottom: none;
-    border-radius: .5rem .5rem 0 0;
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    padding: .4rem 1.6rem;
-    cursor: pointer;
-    transition: all .3s;
-
-`;
-
-export const HelpText = styled.p`
-
-    font-size: 1rem;
-
-`;
-
-export const HelpImage = styled.img`
-
-    width: 1.2rem;
-
-`;
-
 export const DivUx = styled.div`
    
    margin-top: 18rem;
    padding: 2.5rem 10rem 5rem;
+
+   @media screen and (max-width: 800px) {
+
+    padding: 2.5rem 1rem;
+
+   }
 
 `;
 
@@ -231,6 +207,13 @@ export const TopContentUx = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media screen and (max-width: 800px) {
+
+        display: block;
+        text-align: center;
+
+    }
 
 `;
 
@@ -253,12 +236,28 @@ export const TitleUxDesign = styled.h2`
     letter-spacing: .2rem;
     color: #F28000;
 
+    @media screen and (max-width: 800px) {
+
+        font-size: 2rem;
+        letter-spacing: .1rem;
+
+    }
+
 `;
 
 export const TextUx = styled.p`
 
     width: 22.6rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto 1rem;
+        width: 20rem;
+        font-size: .9rem;
+        text-align: justify;
+
+    }
 
 `;
 
@@ -267,11 +266,25 @@ export const ImageUx1 = styled.img`
     width: 20rem;
     border-radius: 1rem;
 
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        width: 10rem;
+        text-align: center;
+
+    }
+
 `;
 
 export const BottomContentUx = styled.div`
 
     margin-top: 5rem;
+
+    @media screen and (max-width: 800px) {
+
+        margin-top: 2rem;
+
+    }
 
 `;
 
@@ -281,6 +294,12 @@ export const CardsUx = styled.div`
     justify-content: center;
     align-items: center;
     gap: 2rem;
+
+    @media screen and (max-width: 800px) {
+
+        display: block;
+
+    }
 
 `;
 
@@ -295,7 +314,14 @@ export const TextCard = styled.p`
 
     &:hover {
         transform: translateY(-1rem);
-        box-shadow: #6E0AD6 5px 5px, #7918DE 10px 10px, #882CE8 15px 15px, #953CF1 20px 20px, #A752FF 25px 25px;    
+        box-shadow: #6E0AD6 2px 2px, #7918DE 7px 7px, #882CE8 10px 10px, #953CF1 10px 10px, #A752FF 10px 10px;    
+    }
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .8rem;
+        margin-bottom: 1rem;
+
     }
 
 `;
@@ -311,6 +337,12 @@ export const DivAccessibility = styled.div`
     margin-top: 5rem;
     padding: 2.5rem 10rem 5rem;
 
+    @media screen and (max-width: 800px) {
+
+        padding: 2.5rem 1rem;
+
+    }
+
 `;
 
 export const TopContentAccessibility = styled.div`
@@ -319,6 +351,10 @@ export const TopContentAccessibility = styled.div`
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1rem;
+
+    @media screen and (max-width: 800px) {
+        display: block;
+    }
 
 `;
 
@@ -339,6 +375,13 @@ export const ImgAccessibility = styled.img`
     width: 30rem;
     border-radius: 1rem 5rem;
 
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto 1rem;
+        width: 15rem;
+
+    }
+
 `;
 
 export const TitleAccessibility = styled.h2`
@@ -347,12 +390,29 @@ export const TitleAccessibility = styled.h2`
     letter-spacing: .2rem;
     color: #F28000;
 
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        text-align: center;
+
+    }
+
 `;
 
 export const TextAccessibility = styled.p`
 
     width: 34.5rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        font-size: .8rem;
+        width: 20rem;
+
+    }
 
 `;
 
@@ -362,6 +422,12 @@ export const BottomContentAccessibility = styled.div`
     display: flex;
     align-items: center;
     gap: 2rem;
+
+    @media screen and (max-width: 800px) {
+
+        display: block;
+
+    }
 
 `;
 
@@ -377,6 +443,13 @@ export const TipCard = styled.div`
     border-radius: 1rem;
     cursor: pointer;
 
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto 1rem;
+        width: 23rem;
+
+    }
+
 `;
 
 export const ImgTipCard = styled.img`
@@ -391,6 +464,12 @@ export const ImgTipCard = styled.img`
         transform: rotate(360deg);
     }
 
+    @media screen and (max-width: 800px) {
+
+        width: 2rem;
+
+    }
+
 `;
 
 export const TipContent = styled.div`
@@ -401,6 +480,12 @@ export const TitleTip = styled.h4`
 
     color: #6E0AD6;
 
+    @media screen and (max-width: 800px) {
+
+        font-size: .9rem;
+
+    }
+
 `;
 
 export const TextTip = styled.p`
@@ -408,6 +493,12 @@ export const TextTip = styled.p`
     width: 18rem;
     font-size: .9rem;
     text-align: justify;
+
+    @media screen and (max-width: 800px) {
+
+        font-size: .7rem;
+    
+    }
 
 `;
 
