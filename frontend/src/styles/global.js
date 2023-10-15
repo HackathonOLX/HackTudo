@@ -11,6 +11,10 @@ export default createGlobalStyle`
         font-size: 62.5%;
     }
 
+    .hide {
+        display: none;
+    }
+
     .darkmode {
         background-color: #1c1b22;
         color: #D8D8D8;
@@ -55,6 +59,28 @@ export default createGlobalStyle`
 
     100% {
         margin-top: -11rem;
+    }
+}
+
+    @keyframes positionSetaCima {
+    0% {
+        margin-top: 5rem;
+    }
+
+    25% {
+        margin-top: 6rem;
+    }
+
+    50% {
+        margin-top: 7rem;
+    }
+
+    75% {
+        margin-top: 6rem;
+    }
+
+    100% {
+        margin-top: 5rem;
     }
 }
 `;

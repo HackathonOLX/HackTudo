@@ -7,12 +7,10 @@ export const Container = styled.div`
       position: relative;
     }
 
-    /* Oculte a checkbox */
     .toggle-container input[type="checkbox"] {
       display: none;
     }
 
-    /* Estilize o botão deslizante */
     .toggle-slider {
       width: 42px;
       height: 22px;
@@ -23,7 +21,6 @@ export const Container = styled.div`
       transition: background-color 0.3s;
     }
 
-    /* Estilize o círculo deslizante */
     .toggle-slider:before {
       content: "";
       width: 18px;
@@ -36,9 +33,8 @@ export const Container = styled.div`
       transition: transform 0.3s;
     }
 
-    /* Estilize a checkbox quando estiver marcada */
     .toggle-container input[type="checkbox"]:checked + .toggle-slider {
-      background-color: #525252; /* Cor quando ativado */
+      background-color: #525252; 
     }
 
     .toggle-container input[type="checkbox"]:checked + .toggle-slider:before {
@@ -47,11 +43,27 @@ export const Container = styled.div`
 
 `;
 
+export const ImgSetaCima = styled.img`
+
+    position: fixed;
+    right: 0;
+    z-index: 2;
+    margin-top: 5rem;
+    margin-right: 3.3rem;
+    animation: positionSetaCima .7s linear infinite;
+
+`;
+
 export const Header = styled.header`
     
-    padding: 2.5rem 3.5rem;
+    padding: 2.5rem 3.5rem 1.5rem;
     display: flex;
     justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 1;
+    transition: all .3s;
 
 `;
 
@@ -89,8 +101,7 @@ export const MenuItem = styled.li`
 `;
 
 export const Main = styled.main`
-
-    margin-top: 5rem;
+    padding-top: 14rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -273,5 +284,137 @@ export const TextCard = styled.p`
 export const SpanCard = styled.span`
 
     color: #6E0AD6;
+
+`;
+
+export const DivAccessibility = styled.div`
+
+    margin-top: 5rem;
+    padding: 2.5rem 10rem 5rem;
+
+`;
+
+export const TopContentAccessibility = styled.div`
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1rem;
+
+`;
+
+export const VideoContentAccessibility = styled.div`
+
+    display: flex;
+    align-items: center;
+
+`;
+
+export const TextContentAccessibility = styled.div`
+
+
+`;
+
+export const ImgAccessibility = styled.img`
+
+    width: 30rem;
+    border-radius: 1rem 5rem;
+
+`;
+
+export const TitleAccessibility = styled.h2`
+
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    color: #F28000;
+
+`;
+
+export const TextAccessibility = styled.p`
+
+    width: 34.5rem;
+    text-align: justify;
+
+`;
+
+export const BottomContentAccessibility = styled.div`
+
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+`;
+
+export const TipCard = styled.div`
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .5rem;
+    gap: 1rem;
+    border: .01rem solid black;
+    width: 25rem;
+    border-radius: 1rem;
+    cursor: pointer;
+
+`;
+
+export const ImgTipCard = styled.img`
+
+    width: 4rem;
+    border: .01rem solid black;
+    border-radius: 50%;
+    padding: .2rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+
+`;
+
+export const TipContent = styled.div`
+
+`;
+
+export const TitleTip = styled.h4`
+
+    color: #6E0AD6;
+
+`;
+
+export const TextTip = styled.p`
+
+    width: 18rem;
+    font-size: .9rem;
+    text-align: justify;
+
+`;
+
+export const DivChatBot = styled.div`
+
+    margin-top: 5rem;
+    padding: 2.5rem 10rem 5rem;
+
+`;
+
+export const TopContentChatBot = styled.div`
+
+
+
+`;
+
+export const TextContentChatBot = styled.div`
+
+
+
+`;
+
+export const TitleChatBot = styled.h2`
+
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    color: #F28000;
 
 `;
