@@ -2,10 +2,12 @@ const knex = require("../database/");
 
 class AdvertsController {
     async getAdverts(request, response) {
-        response.status(200).json("Hello world")
+        const adverts = await knex("adverts");
+
+        response.status(200).json(adverts);
     };
 
-    async registerAdverts(request, response){
+    async registerAdverts(request, response) {
 
         const {
             name,
@@ -25,6 +27,45 @@ class AdvertsController {
         response.status(200).json({
             message: "Anúncio cadastrado"
         });
+    }
+
+    async editAdverts(request, response) {
+        const { id } = request.params;
+
+        let { name, information, price } = request.body;
+
+        console.log(id,name,information,price)
+
+        let imagem = request.file.filename;
+
+        const advert = await knex("adverts").where({ id }).first();
+
+        name = name ? name : advert.name;
+        information = information ? information : advert.information;
+        price = price ? price : advert.price;
+        imagem = imagem ? imagem : advert.imagem;
+
+        await knex("adverts").update({
+            name,
+            information,
+            price,
+            imagem
+        }).where({id})
+
+        response.status(200).json({
+            message: "Anúncio atualizado"
+        });
+    }
+
+    async deleteAdverts(request, response) {
+        const { id } = request.params;
+
+        await knex("adverts").where({ id }).del();
+
+        response.status(200).json({
+            message: "Anúncio excluido"
+        });
+
     }
 }
 
