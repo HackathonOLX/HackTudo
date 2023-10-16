@@ -4,7 +4,7 @@ import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, 
 ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, BtnCloseMenu, UlMenuMobile, Footer, TextFooter} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, BtnCloseMenu, UlMenuMobile, Footer, TextFooter, DivInactivity, TopContentInactivity, TextContentInactivity, ImageInactivity, TitleInactivity, TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard, ImageProduct, NameProduct, PriceProduct, DateProduct} from './styles'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -21,6 +21,10 @@ import Alerta from '../../images/alerta.png'
 import RoboIcon from '../../images/roboicon.png'
 import BtnMenu from '../../images/menu.png'
 import X from '../../images/x.png'
+import Inatividade from '../../images/inatividade.jpg'
+import Inatividade2 from '../../images/inatividade2.jpg'
+import Adicionar from '../../images/add.png'
+import Bola from '../../images/bola.png'
 
 export function App() {
   const [mounted,setMounted] = useState(false)
@@ -250,6 +254,32 @@ export function App() {
           </TipCard>
         </RightContentChatBot>
       </DivChatBot>
+      <DivInactivity>
+        <TopContentInactivity>
+          <ImageInactivity>
+            <ImgInactivity src={Inatividade}></ImgInactivity>
+            <ImgInactivity src={Inatividade2}></ImgInactivity>
+          </ImageInactivity>
+          <TextContentInactivity>
+            <TitleInactivity>INATIVIDADE</TitleInactivity>
+            <TextInactivity>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos temporibus eius tempore perspiciatis? Quia deserunt culpa hic. 
+              Soluta necessitatibus amet quibusdam, quia consequatur culpa quae eveniet voluptatibus laborum quaerat qui! Lorem ipsum dolor, sit amet 
+              consectetur adipisicing elit. Unde tempora veniam ullam nemo, distinctio voluptates dolore, in ad deleniti officia excepturi et ratione. 
+              Porro aliquid itaque repellendus nobis, unde adipisci?</TextInactivity>
+          </TextContentInactivity>
+        </TopContentInactivity>
+        <CardsInactivity>
+          <ProductCard>
+            <ImageProduct src={Bola}></ImageProduct>
+            <NameProduct>BOLA DE FUTEBOL</NameProduct>
+            <PriceProduct>R$ 200.00</PriceProduct>
+            <DateProduct>Publicado: 16/10/2023</DateProduct>
+          </ProductCard>
+          <CardAdd>
+            <ImageAdd src={Adicionar}></ImageAdd>
+          </CardAdd>
+        </CardsInactivity>
+      </DivInactivity>
       <Footer>
         <hr></hr>
         <TextFooter>© 2023 - Todos os direitos reservados</TextFooter>

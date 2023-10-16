@@ -900,6 +900,128 @@ export const TextAlert = styled.p`
 
 `;
 
+export const DivInactivity = styled.div`
+
+    width: 100%;
+    margin-top: 5rem;
+    padding: 2.5rem 10rem 5rem;
+
+`;
+
+export const TopContentInactivity = styled.div`
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+`;
+
+export const TextContentInactivity = styled.div`
+
+
+
+`;
+
+export const ImageInactivity = styled.div`
+
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+`;
+
+export const ImgInactivity = styled.img`
+
+    width: 20rem;
+    height: 12rem;
+    border-radius: 1rem;
+
+`;
+
+export const TitleInactivity = styled.h2`
+
+    font-size: 4rem;
+    letter-spacing: .2rem;
+    color: #F28000;
+
+`;
+
+export const TextInactivity = styled.p`
+
+    width: 27.5rem;
+    text-align: justify;
+
+`;
+
+export const CardsInactivity = styled.div`
+
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+`;
+
+export const ProductCard = styled.div`
+
+    padding: 1rem;
+    border: .01rem solid black;
+    width: 13rem;
+    height: 13rem;
+    border-radius: 1rem;
+    text-align: center;
+
+`;
+
+export const ImageProduct = styled.img`
+
+    width: 5rem;
+
+`;
+
+export const NameProduct = styled.h4`
+
+    color: #6E0AD6;
+
+`;
+
+export const PriceProduct = styled.p`
+
+    color: #E37800;
+
+`;
+
+export const DateProduct = styled.p`
+
+    font-size: .8rem;
+
+`;
+
+export const CardAdd = styled.div`
+
+    padding: 1rem;
+    border: .01rem solid black;
+    width: 13rem;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+    cursor: pointer;
+
+`;
+
+export const ImageAdd = styled.img`
+
+    width: 3rem;
+    transition: all .3s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+`;
+
 export const Footer = styled.footer`
 
     margin: 0 10rem;
