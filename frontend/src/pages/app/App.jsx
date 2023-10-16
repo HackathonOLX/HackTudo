@@ -1,10 +1,15 @@
 import { React, useState, useEffect } from 'react'
+import axios from 'axios';
 
 import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, RightScreenMain, Title, SubTitle, TextMain, ButtonMain,
 ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
 BottomContentUx, CardsUx, TextCard, SpanCard, DivAccessibility, TopContentAccessibility, VideoContentAccessibility, TextContentAccessibility, 
 TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibility, TipCard, ImgTipCard, TipContent, TitleTip, TextTip,
-ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, BtnCloseMenu, UlMenuMobile, Footer, TextFooter, DivInactivity, TopContentInactivity, TextContentInactivity, ImageInactivity, TitleInactivity, TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard, ImageProduct, NameProduct, PriceProduct, DateProduct} from './styles'
+ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, 
+ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, 
+BtnCloseMenu, UlMenuMobile, Footer, TextFooter, DivInactivity, TopContentInactivity, TextContentInactivity, ImageInactivity, TitleInactivity, 
+TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard} from './styles'
+import { Card } from '../../components/cardregister/cardRegister'
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -24,10 +29,21 @@ import X from '../../images/x.png'
 import Inatividade from '../../images/inatividade.jpg'
 import Inatividade2 from '../../images/inatividade2.jpg'
 import Adicionar from '../../images/add.png'
-import Bola from '../../images/bola.png'
 
 export function App() {
   const [mounted,setMounted] = useState(false)
+  const [adverts, setAdverts] = useState([]);
+  const [isCardVisible, setIsCardVisible] = useState(false);
+
+  async function fetchAdverts() {
+    const response = await axios.get('http://localhost:7777/adverts');
+    setAdverts(response.data);
+  }
+
+  const toggleCard = () => {
+    setIsCardVisible(!isCardVisible);
+  };
+
     
     useEffect(() => {
         
@@ -53,6 +69,7 @@ export function App() {
           const MenuMobile = document.querySelector(".menu-mobile");
           const BtnCloseMenuMobile = document.querySelector(".btn-close-menu");
 
+          fetchAdverts();
 
           check.onclick = () => {
             body.classList.toggle("darkmode");
@@ -269,15 +286,20 @@ export function App() {
           </TextContentInactivity>
         </TopContentInactivity>
         <CardsInactivity>
-          <ProductCard>
-            <ImageProduct src={Bola}></ImageProduct>
-            <NameProduct>BOLA DE FUTEBOL</NameProduct>
-            <PriceProduct>R$ 200.00</PriceProduct>
-            <DateProduct>Publicado: 16/10/2023</DateProduct>
+            {adverts.map((advert) => (
+          <ProductCard key={advert.id}>
+              
+              <img src={`http://localhost:7777/files/${advert.imagem}`}></img>
+              <h4>{advert.name}</h4>
+              <p>R$: {advert.price}.00</p>
+              <p className='date'>Publicado: {advert.created_at}</p>
+
           </ProductCard>
-          <CardAdd>
+            ))}
+          <CardAdd onClick={toggleCard}>
             <ImageAdd src={Adicionar}></ImageAdd>
           </CardAdd>
+          <Card isVisible={isCardVisible} toggleCard={toggleCard} />
         </CardsInactivity>
       </DivInactivity>
       <Footer>

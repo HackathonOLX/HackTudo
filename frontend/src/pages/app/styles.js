@@ -970,30 +970,34 @@ export const ProductCard = styled.div`
     height: 13rem;
     border-radius: 1rem;
     text-align: center;
+    
 
-`;
+    img {
 
-export const ImageProduct = styled.img`
+        width: 5rem;
+        height: 5rem;
 
-    width: 5rem;
+    }
 
-`;
+    h4 {
 
-export const NameProduct = styled.h4`
+        color: #6E0AD6;
+        text-transform: uppercase;
 
-    color: #6E0AD6;
+    }
 
-`;
+    p {
 
-export const PriceProduct = styled.p`
+        color: #E37800;
 
-    color: #E37800;
+    }
 
-`;
+    .date {
 
-export const DateProduct = styled.p`
+        font-size: .8rem;
+        color: black;
 
-    font-size: .8rem;
+    }
 
 `;
 
