@@ -35,6 +35,7 @@ export function App() {
   const [adverts, setAdverts] = useState([]);
   const [isCardVisible, setIsCardVisible] = useState(false);
 
+
   async function fetchAdverts() {
     const response = await axios.get('http://localhost:7777/adverts');
     setAdverts(response.data);
