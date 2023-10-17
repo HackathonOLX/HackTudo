@@ -3,7 +3,7 @@ import { Overlay, CardContainer } from './styles';
 import X from "../../images/x.png";
 import axios from 'axios';
 
-export const Card = ({ isVisible, toggleCard }) => {
+export const Card = ({ isVisible, toggleCard, setAdverts }) => {
 
   const [name, setName] = useState();
   const [price, setPrice] = useState();
@@ -29,7 +29,10 @@ export const Card = ({ isVisible, toggleCard }) => {
       alert(error)
     }
 
+    setAdverts(null);
+
   }
+
   return (
     <>
       <Overlay isVisible={isVisible} onClick={toggleCard} />
@@ -61,7 +64,7 @@ export const Card = ({ isVisible, toggleCard }) => {
           />
         </div>
         <div className='buttons'>
-          <button onClick={handleRegisterAdverts}>Cadastrar</button>
+          <button onClick={() => { handleRegisterAdverts(); toggleCard();}}>Cadastrar</button>
           <button onClick={toggleCard}>Cancelar</button>
         </div>
       </CardContainer>

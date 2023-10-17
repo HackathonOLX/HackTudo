@@ -956,8 +956,8 @@ export const TextInactivity = styled.p`
 export const CardsInactivity = styled.div`
 
     margin-top: 2rem;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    align-items: center;
     gap: 2rem;
 
 `;

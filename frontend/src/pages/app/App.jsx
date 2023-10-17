@@ -133,7 +133,7 @@ export function App() {
             setMounted(true);
         }
 
-  },[mounted])
+  },[mounted, adverts])
 
 
   return (
@@ -148,6 +148,7 @@ export function App() {
             <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
             <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
             <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
+            <MenuItem>Inatividade</MenuItem>
             <MenuItem tabIndex={0}>     
               <label className="toggle-container">
                 <input type="checkbox" />
@@ -287,7 +288,7 @@ export function App() {
           </TextContentInactivity>
         </TopContentInactivity>
         <CardsInactivity>
-            {adverts.map((advert) => (
+            {adverts&& adverts.map((advert) => (
           <ProductCard key={advert.id}>
               
               <img src={`http://localhost:7777/files/${advert.imagem}`}></img>
@@ -300,7 +301,7 @@ export function App() {
           <CardAdd onClick={toggleCard}>
             <ImageAdd src={Adicionar}></ImageAdd>
           </CardAdd>
-          <Card isVisible={isCardVisible} toggleCard={toggleCard} />
+          <Card isVisible={isCardVisible} toggleCard={toggleCard} setAdverts={setAdverts} />
         </CardsInactivity>
       </DivInactivity>
       <Footer>
