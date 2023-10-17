@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from 'react'
 import axios from 'axios';
+import { subMonths, isBefore } from 'date-fns';
 
 import { Container, Header, ImgLogo, Nav, Menu, MenuItem, Main, LeftScreenMain, RightScreenMain, Title, SubTitle, TextMain, ButtonMain,
 ImageMain, DivUx, TopContentUx, TitleUxDesign, TextUx, TextContentUx, ImagesContentUx, ImageUx1, 
@@ -10,6 +11,7 @@ ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipN
 BtnCloseMenu, UlMenuMobile, Footer, TextFooter, DivInactivity, TopContentInactivity, TextContentInactivity, ImageInactivity, TitleInactivity, 
 TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard} from './styles'
 import { Card } from '../../components/cardregister/cardRegister'
+import { CardTime } from '../../components/cardtime/cardTime';
 
 import Logo from '../../images/logo.png'
 import SetaCimaGif from '../../images/setacima.png'
@@ -34,6 +36,7 @@ export function App() {
   const [mounted,setMounted] = useState(false)
   const [adverts, setAdverts] = useState([]);
   const [isCardVisible, setIsCardVisible] = useState(false);
+  const [isCardVisibleTime, setIsCardVisibleTime] = useState(false);
 
 
   async function fetchAdverts() {
@@ -43,6 +46,15 @@ export function App() {
 
   const toggleCard = () => {
     setIsCardVisible(!isCardVisible);
+  };
+
+  const toggleCardTime = () => {
+    setIsCardVisibleTime(!isCardVisibleTime);
+  };
+
+  const isAdvertOlderThanOneMonth = (advertDate) => {
+    const oneMonthAgo = subMonths(new Date(), 1);
+    return isBefore(new Date(advertDate), oneMonthAgo);
   };
 
     
@@ -148,7 +160,7 @@ export function App() {
             <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
             <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
             <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
-            <MenuItem>Inatividade</MenuItem>
+            <Link href='#inactivity'><MenuItem>Inatividade</MenuItem></Link>
             <MenuItem tabIndex={0}>     
               <label className="toggle-container">
                 <input type="checkbox" />
@@ -273,7 +285,7 @@ export function App() {
           </TipCard>
         </RightContentChatBot>
       </DivChatBot>
-      <DivInactivity>
+      <DivInactivity id='inactivity'>
         <TopContentInactivity>
           <ImageInactivity>
             <ImgInactivity src={Inatividade}></ImgInactivity>
@@ -295,6 +307,10 @@ export function App() {
               <h4>{advert.name}</h4>
               <p>R$: {advert.price}.00</p>
               <p className='date'>Publicado: {advert.created_at}</p>
+            
+              {isAdvertOlderThanOneMonth(advert.created_at) ? (
+                <CardTime isVisibleTime={isCardVisibleTime} toggleCardTime={toggleCardTime} nameAdvert={advert.name}></CardTime>
+              ) : null }
 
           </ProductCard>
             ))}
