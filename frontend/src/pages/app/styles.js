@@ -1016,6 +1016,7 @@ export const ProductCard = styled.div`
     height: 13rem;
     border-radius: 1rem;
     text-align: center;
+    transition: all .3s;
     
 
     img {
@@ -1040,8 +1041,10 @@ export const ProductCard = styled.div`
 
     .date {
 
+        background-color: transparent;
         font-size: .8rem;
         color: black;
+        transition: all .3s;
 
     }
 
@@ -1072,6 +1075,94 @@ export const ProductCard = styled.div`
 
 `;
 
+export const Message = styled.div`
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7); /* Cor de fundo escura com transparência */
+        z-index: 998; /* Abaixo do card, mas acima do conteúdo padrão */
+    }
+
+    .card-time {
+        margin: 0;
+        position: fixed;
+        padding: 1rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        border-radius: 1rem;
+        
+        h4 {
+            margin-bottom: .5rem;
+            font-size: .9rem;
+            color: #6E0AD6;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: black;
+            width: 20rem;
+            text-align: center;
+        }
+
+        span {
+            color: #E37800;
+            text-transform: uppercase;
+        }
+
+        .card-buttons {
+            margin-top: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: .5rem;
+        }
+
+        .card-buttons button {
+            border-radius: .5rem;
+            border: .01rem solid black;
+            padding: .2rem .5rem;
+            font-family: "Poppins";
+            cursor: pointer;
+            transition: all .3s;
+        }
+
+        .card-buttons button:hover {
+            background-color: #6E0AD6;
+            color: white;
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+
+        .card-time {
+        
+            h4 {
+                font-size: .7rem;
+            }
+
+            p {
+                font-size: .8rem;
+                width: 16rem;
+            }
+
+            .card-buttons button {
+                font-size: .8rem;
+            }
+
+    }
+
+    }
+
+`;
+
 export const CardAdd = styled.div`
 
     padding: 1rem;
@@ -1083,6 +1174,7 @@ export const CardAdd = styled.div`
     justify-content: center;
     border-radius: 1rem;
     cursor: pointer;
+    transition: all .3s;
 
     @media screen and (max-width: 800px) {
 

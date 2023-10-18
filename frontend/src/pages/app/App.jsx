@@ -9,7 +9,7 @@ TitleAccessibility, TextAccessibility, ImgAccessibility, BottomContentAccessibil
 ImgSetaCima, DivChatBot, TextContentChatBot, TitleChatBot, LeftContentChatBot, TextChatBot, RightContentChatBot, ImgChatBot, Curiosity, Alert, 
 ImgAlert, ContentAlert, TextAlert, ImgSetaDireita, Link, TextTipMobile, TextTipNoMobile, DivMenuMobile, BtnMenuMobile, MenuMobile, TopMenuMobile, 
 BtnCloseMenu, UlMenuMobile, Footer, TextFooter, DivInactivity, TopContentInactivity, TextContentInactivity, ImageInactivity, TitleInactivity, 
-TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard} from './styles'
+TextInactivity, ImgInactivity, CardsInactivity, CardAdd, ImageAdd, ProductCard, Message} from './styles'
 import { Card } from '../../components/cardregister/cardRegister'
 import { CardTime } from '../../components/cardtime/cardTime';
 
@@ -36,20 +36,28 @@ export function App() {
   const [mounted,setMounted] = useState(false)
   const [adverts, setAdverts] = useState([]);
   const [isCardVisible, setIsCardVisible] = useState(false);
-  const [isCardVisibleTime, setIsCardVisibleTime] = useState(false);
-
+  const [hiddenMessages, setHiddenMessages] = useState([]);
 
   async function fetchAdverts() {
     const response = await axios.get('http://localhost:7777/adverts');
     setAdverts(response.data);
   }
 
-  const toggleCard = () => {
-    setIsCardVisible(!isCardVisible);
+  const handleDeleteAdvert = async (advertId) => {
+    try {
+      await axios.delete(`http://localhost:7777/adverts/${advertId}`);
+      fetchAdverts();
+    } catch (error) {
+      console.error('Erro ao excluir o anúncio:', error);
+    }
   };
 
-  const toggleCardTime = () => {
-    setIsCardVisibleTime(!isCardVisibleTime);
+  const handleCloseCard = (advertId) => {
+    setHiddenMessages((prevHiddenMessages) => [...prevHiddenMessages, advertId]);
+  };
+
+  const toggleCard = () => {
+    setIsCardVisible(!isCardVisible);
   };
 
   const isAdvertOlderThanOneMonth = (advertDate) => {
@@ -81,6 +89,9 @@ export function App() {
           const btnMenuMobile = document.querySelector(".btn-menu-mobile");
           const MenuMobile = document.querySelector(".menu-mobile");
           const BtnCloseMenuMobile = document.querySelector(".btn-close-menu");
+          const productCard = document.querySelector(".product-card");
+          const cardAdd = document.querySelector(".card-add");
+          const datePublish = document.querySelector(".date");
 
           fetchAdverts();
 
@@ -96,7 +107,9 @@ export function App() {
             alert.classList.toggle("darkmode-cards");
             curiosity1.classList.toggle("darkmode-cards");
             curiosity2.classList.toggle("darkmode-cards");
-
+            productCard.classList.toggle("darkmode");
+            cardAdd.classList.toggle("darkmode");
+            datePublish.classList.toggle("darkmode");
 
           }
 
@@ -302,22 +315,37 @@ export function App() {
         </TopContentInactivity>
         <CardsInactivity>
             {adverts&& adverts.map((advert) => (
-          <ProductCard key={advert.id}>
+          <ProductCard key={advert.id} className='product-card'>
               
               <img src={`http://localhost:7777/files/${advert.imagem}`}></img>
               <h4>{advert.name}</h4>
               <p>R$: {advert.price}.00</p>
-              <p className='date'>Publicado: {advert.created_at}</p>
-            
-              {isAdvertOlderThanOneMonth(advert.created_at) ? (
-                <CardTime isVisibleTime={isCardVisibleTime} toggleCardTime={toggleCardTime} nameAdvert={advert.name}></CardTime>
-              ) : null }
+              <p className='date' id='date'>Publicado: {advert.created_at}</p>
 
           </ProductCard>
             ))}
-          <CardAdd onClick={toggleCard}>
+
+          <CardAdd onClick={toggleCard} className='card-add'>
             <ImageAdd src={Adicionar}></ImageAdd>
           </CardAdd>
+
+          {adverts&& adverts.map((advert) => (
+              <Message key={advert.id}>
+                {isAdvertOlderThanOneMonth(advert.created_at) ? (
+                <div className={`overlay ${hiddenMessages.includes(advert.id) ? 'hide' : ''}`}>
+                  <div className='card-time'>
+                    <h4>Aviso</h4>
+                    <p>O anúncio <span>"{advert.name}"</span> está ativo há mais de um mês. Deseja excluí-lo?</p>
+                    <div className='card-buttons'>
+                      <button className='btn-notdelete' onClick={() => handleCloseCard(advert.id)}>Manter</button>
+                      <button onClick={() => handleDeleteAdvert(advert.id)}>Excluir</button>
+                    </div>
+                  </div>
+                </div>
+              ) : null }
+              </Message>
+            ))}
+
           <Card isVisible={isCardVisible} toggleCard={toggleCard} setAdverts={setAdverts} />
         </CardsInactivity>
       </DivInactivity>

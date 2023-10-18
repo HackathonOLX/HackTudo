@@ -25,6 +25,10 @@ export default createGlobalStyle`
         color: #D8D8D8;
         border-color: white;
 
+        .date {
+            color: #D8D8D8;
+        }
+
         a {
             color: #D8D8D8;
         }
