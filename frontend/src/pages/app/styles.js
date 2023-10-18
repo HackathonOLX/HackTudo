@@ -906,6 +906,12 @@ export const DivInactivity = styled.div`
     margin-top: 5rem;
     padding: 2.5rem 10rem 5rem;
 
+    @media screen and (max-width: 800px) {
+
+        padding: 2.5rem 1rem;
+
+    }
+
 `;
 
 export const TopContentInactivity = styled.div`
@@ -913,6 +919,12 @@ export const TopContentInactivity = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 800px) {
+
+        display: block;
+
+    }
 
 `;
 
@@ -928,6 +940,7 @@ export const ImageInactivity = styled.div`
     align-items: center;
     gap: 2rem;
 
+
 `;
 
 export const ImgInactivity = styled.img`
@@ -935,6 +948,13 @@ export const ImgInactivity = styled.img`
     width: 20rem;
     height: 12rem;
     border-radius: 1rem;
+
+    @media screen and (max-width: 800px) {
+
+        width: 15rem;
+        height: 7rem;
+
+    }
 
 `;
 
@@ -944,6 +964,15 @@ export const TitleInactivity = styled.h2`
     letter-spacing: .2rem;
     color: #F28000;
 
+    @media screen and (max-width: 800px) {
+
+        margin-top: 2rem;
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        text-align: center;
+
+    }
+
 `;
 
 export const TextInactivity = styled.p`
@@ -951,14 +980,31 @@ export const TextInactivity = styled.p`
     width: 27.5rem;
     text-align: justify;
 
+    @media screen and (max-width: 800px) {
+
+        margin: 0 auto;
+        width: 20rem;
+        font-size: .9rem;
+
+    }
+
 `;
 
 export const CardsInactivity = styled.div`
 
     margin-top: 2rem;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);    align-items: center;
+    grid-template-columns: repeat(5, 1fr);    
+    align-items: center;
     gap: 2rem;
+
+    @media screen and (max-width: 800px) {
+
+        padding: 0 3.5rem;
+        grid-template-columns: repeat(2, 0fr);    
+        gap: 1rem;
+
+    }
 
 `;
 
@@ -999,6 +1045,31 @@ export const ProductCard = styled.div`
 
     }
 
+    @media screen and (max-width: 800px) {
+
+        width: 10rem;
+        height: 10rem;
+        padding: .5rem;
+
+        img {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        h4 {
+            font-size: .9rem;
+        }
+
+        p {
+            font-size: .8rem;
+        }
+
+        .date {
+            font-size: .7rem;
+        }
+
+    }
+
 `;
 
 export const CardAdd = styled.div`
@@ -1013,6 +1084,14 @@ export const CardAdd = styled.div`
     border-radius: 1rem;
     cursor: pointer;
 
+    @media screen and (max-width: 800px) {
+
+        width: 10rem;
+        height: 10rem;
+        padding: .5rem;
+
+    }
+
 `;
 
 export const ImageAdd = styled.img`
@@ -1022,6 +1101,12 @@ export const ImageAdd = styled.img`
 
     &:hover {
         transform: scale(1.1);
+    }
+
+    @media screen and (max-width: 800px) {
+
+        width: 2rem;
+
     }
 
 `;

@@ -178,6 +178,7 @@ export function App() {
             <Link href='#ux-design'><MenuItem>UX Design</MenuItem></Link>
             <Link href='#accessibility'><MenuItem>Acessibilidade</MenuItem></Link>
             <Link href='#chatbot'><MenuItem>ChatBot</MenuItem></Link>
+            <Link href='#inactivity'><MenuItem>Inatividade</MenuItem></Link>
             <MenuItem tabIndex={0}>     
               <label className="toggle-container">
               <input type="checkbox" />

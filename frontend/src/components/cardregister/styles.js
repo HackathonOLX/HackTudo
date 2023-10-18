@@ -88,4 +88,46 @@ export const CardContainer = styled.div`
     background-color: #6E0AD6;
     color: white;
   }
+
+  @media screen and (max-width: 800px) {
+
+    h1 {
+      font-size: 1.4rem;
+    }
+
+  .section {
+    display: block;
+  }
+
+  .section, .name, .price {
+    gap: .5rem;
+  }
+
+  .price {
+    gap: .6rem;
+  }
+
+  p {
+    font-size: .9rem;
+    margin-bottom: .5rem;
+  }
+
+  .name input, .price input {
+    width: 8rem;
+    margin-bottom: .5rem;
+  }
+
+  .advert-image input {
+    font-size: .7rem;
+  }
+
+  .buttons {
+    gap: .5rem;
+  }
+
+  .buttons button {
+    font-size: .7rem;
+  }
+  
+  }
 `;
