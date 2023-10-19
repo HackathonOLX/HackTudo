@@ -1,15 +1,20 @@
-const path = require("path");
-
 module.exports = {
   development: {
-    client: "sqlite3",
+    client: 'postgresql',
     connection: {
-      filename: path.resolve(__dirname, "src", "database", "database.db")
+      database: 'railway',
+      host: 'containers-us-west-132.railway.app',
+      port: 7252,
+      user: 'postgres',
+      password:'ESfx4Wkb00EZZ7c9chiH'
     },
     migrations: {
-      directory: path.resolve(__dirname, "src", "database", "migrations")
+      tableName: 'knex_migrations',
+      directory: './src/database/migrations'
     },
-    
-    useNullAsDefault: true
-  }
+    seeds: {
+      directory: './seeds'
+    }
+  },
+  // ... outras configurações como produção, teste, etc., se necessário
 };
