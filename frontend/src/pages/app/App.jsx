@@ -39,13 +39,13 @@ export function App() {
   const [hiddenMessages, setHiddenMessages] = useState([]);
 
   async function fetchAdverts() {
-    const response = await axios.get('http://localhost:7777/adverts');
+    const response = await axios.get('https://back-end-hacktudo.vercel.app/adverts');
     setAdverts(response.data);
   }
 
   const handleDeleteAdvert = async (advertId) => {
     try {
-      await axios.delete(`http://localhost:7777/adverts/${advertId}`);
+      await axios.delete(`https://back-end-hacktudo.vercel.app/adverts/${advertId}`);
       fetchAdverts();
     } catch (error) {
       console.error('Erro ao excluir o anúncio:', error);
@@ -317,7 +317,7 @@ export function App() {
             {adverts&& adverts.map((advert) => (
           <ProductCard key={advert.id} className='product-card'>
               
-              <img src={`http://localhost:7777/files/${advert.imagem}`}></img>
+              <img src={`https://drive.google.com/uc?id=${advert.id_google_drive_image}`} />
               <h4>{advert.name}</h4>
               <p>R$: {advert.price}.00</p>
               <p className='date' id='date'>Publicado: {advert.created_at}</p>

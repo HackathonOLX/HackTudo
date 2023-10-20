@@ -19,7 +19,7 @@ export const Card = ({ isVisible, toggleCard, setAdverts }) => {
     formData.append("imagem", imagem);
 
     try {
-      await axios.post("http://localhost:7777/adverts", formData, {
+      await axios.post("https://back-end-hacktudo.vercel.app/adverts", formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
